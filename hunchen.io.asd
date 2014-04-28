@@ -35,7 +35,7 @@
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (unless (boundp '*cwd*)
-    (defparameter *cwd* (pathname-directory-pathname (compile-file-pathname "")))))
+    (defparameter *cwd* (uiop/pathname:pathname-directory-pathname (compile-file-pathname "")))))
 
 (defun in-project-path (&rest paths)
   (labels ((rec (acc rest)
